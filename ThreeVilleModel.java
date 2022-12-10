@@ -1,15 +1,15 @@
-import model.Board;
-import model.Farmer;
-import model.Tile;
-import model.Tool;
+import model.*;
 import model.tools.Plow;
 
 public class ThreeVilleModel {
     private Farmer farmer;
     private Board board;
+    private Store store;
+    private Seed seed;
     private Tool tool;
 
     public ThreeVilleModel(){
+        store = new Store();
         farmer = new Farmer();
         board = new Board();
     }
@@ -47,5 +47,17 @@ public class ThreeVilleModel {
         }
 
         return cost;
+    }
+
+    public Seed getSeedInfo(String seedName){
+        Seed seedInfo = null;
+        for(model.Seed crop : store.getSEEDS()){
+            if(crop.getName().equals(seedName)){
+                seedInfo = crop;
+                break;
+            }
+        }
+
+        return seedInfo;
     }
 }

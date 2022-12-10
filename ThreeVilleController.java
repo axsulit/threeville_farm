@@ -22,6 +22,7 @@ public class ThreeVilleController {
     private static ThreeVilleGUI gui;
     private static ThreeVilleModel model;
     private static boolean isToolSelected;
+    private static boolean isSeedSelected;
     private static String toolSelected;
     private static String seedToPlant;
 
@@ -30,7 +31,8 @@ public class ThreeVilleController {
         this.model = model;
         isToolSelected = false;
         toolSelected = "";
-
+        isSeedSelected = false;
+        seedToPlant = "";
         setGameVariables();
         gui.setListeners(new StartListener(), new ModeListener(), new PopupListener(), new InventoryListener(), new BoardListener(), new SeedListener());
     }
@@ -44,20 +46,37 @@ public class ThreeVilleController {
 
     public void getSeed(String str){
         gui.getPromptHolder().setText(str);
+        seedToPlant = str;
     }
+
     private class SeedListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            getSeed(e.getActionCommand());
+            isSeedSelected = true;
 
-            String string = e.getActionCommand();
+            getSeed(e.getActionCommand());
+            gui.getStoreFrame().dispose();
 
             if(e.getActionCommand().equals("Turnip")){
                 gui.getPromptHolder().setText("\nYou will plant a turnip. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Carrot")){
+                gui.getPromptHolder().setText("\nYou will plant a Carrot. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Potato")){
+                gui.getPromptHolder().setText("\nYou will plant a Potato. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Rose")){
+                gui.getPromptHolder().setText("\nYou will plant a Rose. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Tulip")){
+                gui.getPromptHolder().setText("\nYou will plant a Tulip. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Sunflower")){
+                gui.getPromptHolder().setText("\nYou will plant a Sunflower. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Mango")){
+                gui.getPromptHolder().setText("\nYou will plant a Mango. Select a tile...\n");
+            } else if(e.getActionCommand().equals("Apple")){
+                gui.getPromptHolder().setText("\nYou will plant a Apple. Select a tile...\n");
             }
-        }
     }
+
     private class InventoryListener implements ActionListener {
 
         @Override
@@ -91,7 +110,7 @@ public class ThreeVilleController {
             int tileNum = Integer.parseInt(e.getActionCommand());
             Tile tile = model.getTile(tileNum);
 
-            if(!isToolSelected){
+            if(!isToolSelected && !isSeedSelected){
                 // Print tileInfo
                 String textToAdd = "";
                 for(Tile[] atile: Board.getTile()){
@@ -105,7 +124,7 @@ public class ThreeVilleController {
                 //model.getTile(Integer.parseInt(e.getActionCommand()));
                 gui.getTileInfo().setText(textToAdd);
             }
-            else {
+            else if(isToolSelected && !isSeedSelected) {
 
                 switch (toolSelected) {
                     case "Plow" -> {
@@ -176,14 +195,51 @@ public class ThreeVilleController {
                             gui.getPromptHolder().setText("Tile has no seed planted. It cannot be fertilized!");
                     }
                     case "Seeds" -> {
-
                     }
                 }
 
                 setGameVariables();
                 gui.updateTileStatus(Integer.parseInt(e.getActionCommand()), model.getTile(Integer.parseInt(e.getActionCommand())).getTileType());
                 isToolSelected = false;
+            } else if (!isToolSelected && isSeedSelected){
+
+
+                Seed seedInfo = model.getSeedInfo(seedToPlant);
+
+                // Check if tile is occupied
+                if(tile.isOccupied()){
+                    gui.getPromptHolder().setText("This tile is already occupied!");
+
+                } else if(tile.getTileType().equals(TileType.UNPLOWED)){
+                    gui.getPromptHolder().setText("You cannot plant on an unplowed tile!");
+                } else {
+                    if((seedInfo.getCropType() == CropType.FRUIT_TREE)){
+                        if((tileNum % 10 == 1 || tileNum % 10 == 5 || tileNum % 10 == 6 || tileNum % 10 == 0) ||
+                                (tileNum > 1 && tileNum < 5) || (tileNum > 46 && tileNum < 50)) {
+                            System.out.println("You cannot plant a fruit tree on the edge of the land!");
+                        }
+//                        else if(outerTileOccupied){ // outer tiles are occupied
+//                            System.out.println("This space is too small for a fruit tree!");
+//                           gui.getPromptHolder().setText("This space is too small for a fruit tree!");
+//                        }
+                        else{
+                            gui.getPromptHolder().setText("Planted " + seedToPlant);
+                            model.getFarmer().plantSeed(seedToPlant);
+                        }
+                    }
+                    else {
+                        gui.getPromptHolder().setText("Planted " + seedToPlant);
+                        model.getFarmer().plantSeed(seedToPlant);
+                    }
+                }
+
+            } else{
+                gui.getPromptHolder().setText("You cannot do two things at the same time...");
+                isToolSelected = false;
+                isSeedSelected = false;
             }
+
+
         }
     }
 

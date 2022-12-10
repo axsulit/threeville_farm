@@ -75,6 +75,11 @@ public class ThreeVilleGUI extends JFrame {
     private JLabel dayNum;
     private JButton btnNextDay;
 
+    public JFrame getStoreFrame() {
+        return storeFrame;
+    }
+
+    private JFrame storeFrame;
 
     private String seedToPlant;
 
@@ -82,6 +87,7 @@ public class ThreeVilleGUI extends JFrame {
 
 
     public ThreeVilleGUI(){
+        store = new JFrame("Store");
         seedToPlant = "";
         statInfo = new JLabel();
         promptHolder = new JLabel();
@@ -188,9 +194,8 @@ public class ThreeVilleGUI extends JFrame {
 
     public void setStoreScreen(ActionListener seed){
         //make new jframe
-        JFrame storeFrame = new JFrame("Store");
         JPanel panel = new JPanel();
-
+        storeFrame = new JFrame("Store");
         storeFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         storeFrame.setSize(200,300);
         panel.setSize(200,300);
