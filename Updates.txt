@@ -1,0 +1,61 @@
+(11/25/2022) Bella:
+
+Store:
+ - set all crops' availability to true
+ - changed Tomato to Potato
+ - sellSeed()
+    - changed do while statement for ID number
+    - updated switch cases
+
+Farmer:
+ - plantSeed()
+    - added a conditional statement for fruit trees (planting a tree on the edge)
+    - added topTile and bottomTile
+    - added outerTileOccupied
+    - added an iterative statement to check is one of the outer tiles is occupied || NEEDS TESTING
+
+----------------------------------------------------------------------------------------------------------------
+(11/27/2022) Bella:
+
+Plant:
+ - modified setActualProduceNum() to be able to get the max number of produce
+
+ ----------------------------------------------------------------------------------------------------------------
+ (11/27/2022 3:25 PM) Bella:
+
+ Farmer:
+  - added bonus for flowers (harvestPriceTotal)
+
+ MyFarm:
+  - added register farmer
+
+ FarmerType:
+  - changed Honorable_farmer to Legendary_farmer
+  - displayed computation of total harvest price
+
+ Store:
+  - added buying bonus to total price
+  - displayed receipt
+  - added bonusIncrease() to update fertilizer and water bonus of SEEDS
+
+ Seed:
+  - added setters for fertilizer and water bonus
+
+ FarmerBenefits:
+  - changed water and fertilizer bonus to int
+
+----------------------------------------------------------------------------------------------------------------
+ (11/28/2022 10:00 PM) Bella:
+
+ ISSUES FOUND:
+ - Rocks.txt cannot be found
+
+ Farmer:
+ - Edited display for harvesting
+
+ Store:
+ - Edited display for sellSeed
+
+ MyFarm
+ - added level and OC validation for Registering Farmer Type
+ - added a display that alerts the player when a crop has withered
