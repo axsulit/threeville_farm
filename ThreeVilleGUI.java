@@ -362,10 +362,12 @@ public class ThreeVilleGUI extends JFrame {
         CENTER_CONTAINER.add(FARMLOT_CONTAINER);
 
         // Right
+        RIGHT_CONTAINER.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         RIGHT_CONTAINER.setBackground(new Color(0xc1cd7b));
         //RIGHT_CONTAINER.setBackground(Color.pink);
         RIGHT_CONTAINER.setPreferredSize(new Dimension(440, 500));
-
+        btnNextDay.setPreferredSize(new Dimension(100, 50));
+        btnNextDay.setActionCommand("NextDay");
         RIGHT_CONTAINER.add(dayNum);
         RIGHT_CONTAINER.add(btnNextDay);
 
@@ -599,7 +601,7 @@ public class ThreeVilleGUI extends JFrame {
         return this;
     }
 
-    public void setListeners(MouseListener start, MouseListener gameMode, ActionListener popupButtons, ActionListener inventory, ActionListener board, ActionListener seeds) {
+    public void setListeners(MouseListener start, MouseListener gameMode, ActionListener popupButtons, ActionListener inventory, ActionListener board, ActionListener seeds, ActionListener btn) {
         START_BUTTONS[0].addMouseListener(start); // listener for the play button
         START_BUTTONS[1].addMouseListener(start); // listener for the exit button
         GAME_MODES[0].addMouseListener(gameMode); // listener for the easy mode
@@ -616,7 +618,7 @@ public class ThreeVilleGUI extends JFrame {
             }
         }
 
-
+        btnNextDay.addActionListener(btn);
 
         btnShop.addActionListener(new ActionListener() {
             @Override

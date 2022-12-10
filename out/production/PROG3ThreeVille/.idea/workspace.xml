@@ -2,8 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b712dd44-d8f2-4050-91c2-a6ff4d3fbfdf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rocks.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/CropType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Plant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Seed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/TileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Tool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Tools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/tools/Pickaxe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/tools/Plow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/tools/Shovel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/tools/WateringCan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Farmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmerBenefits.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/FarmerBenefits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/FarmerDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FarmerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/FarmerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Stats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreeVilleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ThreeVilleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreeVilleGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/ThreeVilleGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThreeVilleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ThreeVilleModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/Farmer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/FarmerBenefits.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/FarmerDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/FarmerType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/Inventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/Money.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/PROG3ThreeVille/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/PROG3ThreeVille/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/PROG3ThreeVille/.idea/vcs.xml" beforeDir="false" />
@@ -14,6 +45,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/PROG3ThreeVille/out/production/PROG3ThreeVille/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/PROG3ThreeVille/out/production/PROG3ThreeVille/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/PROG3ThreeVille/out/production/PROG3ThreeVille/PROG3ThreeVille.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/Stats.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleController$BoardListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleController$BoardListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleController$InventoryListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleController$InventoryListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleController$ModeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleController$ModeListener.class" afterDir="false" />
@@ -26,8 +58,11 @@
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleGUI$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleGUI$FarmTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleGUI$FarmTile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROG3ThreeVille/ThreeVilleModel.class" afterDir="false" />
     </list>
-    <list id="29d023be-12cd-4468-bad4-258da87ec9b1" name="Changes by Bella" comment="" />
+    <list id="29d023be-12cd-4468-bad4-258da87ec9b1" name="Changes by Bella" comment="">
+      <change beforePath="$PROJECT_DIR$/FarmerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/FarmerType.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +78,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/model/FarmerType.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="2" changelist="b712dd44-d8f2-4050-91c2-a6ff4d3fbfdf" />
+        <range start1="1" end1="2" start2="3" end2="4" changelist="b712dd44-d8f2-4050-91c2-a6ff4d3fbfdf" />
+        <range start1="7" end1="8" start2="9" end2="10" changelist="29d023be-12cd-4468-bad4-258da87ec9b1" />
+        <range start1="11" end1="12" start2="13" end2="14" changelist="29d023be-12cd-4468-bad4-258da87ec9b1" />
+        <range start1="15" end1="16" start2="17" end2="18" changelist="29d023be-12cd-4468-bad4-258da87ec9b1" />
+        <range start1="19" end1="20" start2="21" end2="22" changelist="29d023be-12cd-4468-bad4-258da87ec9b1" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,12 +103,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Anne Sulit/OneDrive/Desktop/ThreeVille"
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "C:/Users/Anne Sulit/OneDrive/Documents/ccprog3_mco1_final/ccprog3_mco1/MCO2_MyFarm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anne Sulit\OneDrive\Desktop\ThreeVille\model" />
+      <recent name="C:\Users\Anne Sulit\OneDrive\Desktop\ThreeVille" />
       <recent name="C:\Users\Anne Sulit\OneDrive\Desktop\ThreeVille\PROG3ThreeVille\assets\img" />
       <recent name="C:\Users\Anne Sulit\OneDrive\Desktop\ThreeVille\PROG3ThreeVille\assets" />
     </key>
@@ -69,6 +120,7 @@
       <recent name="C:\Users\Anne Sulit\OneDrive\Desktop\ThreeVille\PROG3ThreeVille\assets\img" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
       <recent name="" />
     </key>
   </component>

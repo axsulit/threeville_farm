@@ -107,28 +107,10 @@ public class Farmer {
      *
      * @param seed is the seed to be planted.
      */
-    public void plantSeed(String seed){
-       int tileNum; // model.Tile number to plant seed on
+    public void plantSeed(int tileNo, String seed, Seed seedInf, int day){
+       int tileNum = tileNo; // model.Tile number to plant seed on
         Store store = new Store(); // Store where seeds are bought
-        model.Seed seedInfo = null; // seed to
-
-//        int topTile = tileNum - 5, // model.Tile directly above the chosen tile
-//                bottomTile = tileNum + 5; // model.Tile directly below the chosen tile
-//        boolean outerTileOccupied = false; // Indicates if one of the outer tiles is occupied
-//
-//        // Checking if one of the outer tiles is occupied
-//        for(model.Tile[] tile: model.Board.getTile()){
-//            for(model.Tile t: tile){
-//                if(t.getTileNum() == tileNum - 5 || t.getTileNum() == tileNum + 5 || t.getTileNum() == tileNum + 1 || t.getTileNum() == tileNum - 1 || // top, bottom, right, left
-//                        t.getTileNum() == topTile - 1 || t.getTileNum() == topTile + 1 || // upper diagonals
-//                        t.getTileNum() == bottomTile - 1 || t.getTileNum() == bottomTile + 1){ // lower diagonals
-//                    if(t.isOccupied()){
-//                        outerTileOccupied = true;
-//                        break;
-//                    }
-//                }
-//            }
-//        }
+        Seed seedInfo = seedInf; // seed to
 
         // Find tile
         for(model.Tile[] tile: model.Board.getTile()){
@@ -138,58 +120,43 @@ public class Farmer {
                         if((seedInfo.getCropType() == model.CropType.FRUIT_TREE)){
                             if((tileNum % 10 == 1 || tileNum % 10 == 5 || tileNum % 10 == 6 || tileNum % 10 == 0) ||
                                     (tileNum > 1 && tileNum < 5) || (tileNum > 46 && tileNum < 50)) {
-                                System.out.println("You cannot plant a fruit tree on the edge of the land!");
+                                //do nothing
                             }
-                            else if(outerTileOccupied){ // outer tiles are occupied
-                                System.out.println("This space is too small for a fruit tree!");
-                            }
+//                            else if(outerTileOccupied){ // outer tiles are occupied
+//                                System.out.println("This space is too small for a fruit tree!");
+//                            }
                             else{
-                                System.out.println("Planting seed...");
-
                                 t.getPlant().setSeedDetails(seedInfo);
-                                t.getPlant().setDayPlanted(MyFarm.getDay());
-                                t.getPlant().setDayToHarvest(MyFarm.getDay() + t.getPlant().getSeedDetails().getHarvestTime());
-                                t.setTileType(model.TileType.HAS_PLANT);
+                                t.getPlant().setDayPlanted(day);
+                                t.getPlant().setDayToHarvest(day + t.getPlant().getSeedDetails().getHarvestTime());
+                                t.setTileType(TileType.HAS_PLANT);
                                 t.setOccupied(true);
-                                MyFarm.decreaseVacancy();
                                 stats.addTimesPlanted();
 
-                                System.out.println("model.Seed Planted!");
-                                System.out.printf(" Day planted: %d\n Day to Harvest: %d \n", t.getPlant().getDayPlanted(), t.getPlant().getDayToHarvest());
-                                getInventory().useSeed(seed.getKey());
                             }
                         }
                         else {
-                            System.out.println("Planting seed...");
-
                             t.getPlant().setSeedDetails(seedInfo);
-                            t.getPlant().setDayPlanted(MyFarm.getDay());
-                            t.getPlant().setDayToHarvest(MyFarm.getDay() + t.getPlant().getSeedDetails().getHarvestTime());
-                            t.setTileType(model.TileType.HAS_PLANT);
+                            t.getPlant().setDayPlanted(day);
+                            t.getPlant().setDayToHarvest(day + t.getPlant().getSeedDetails().getHarvestTime());
+                            t.setTileType(TileType.HAS_PLANT);
                             t.setOccupied(true);
-                            MyFarm.decreaseVacancy();
                             stats.addTimesPlanted();
-
-                            System.out.println("model.Seed Planted!");
-                            System.out.printf(" Day planted: %d\n Day to Harvest: %d \n", t.getPlant().getDayPlanted(), t.getPlant().getDayToHarvest());
-                            getInventory().useSeed(seed.getKey());
                         }
                         break;
                     }
                 }
             }
-        
     }
 
-//
-//    /**
-//     * Represents the farmer buying fertilizer from the store.
-//     *
-//     * @param store is where the farmer buys fertilizers.
-//     */
-//    public void buyFertilizer(Store store){
-//        store.sellFertilizer(this.money, this.inventory);
-//    }
+    /**
+     * Represents the farmer buying fertilizer from the store.
+     *
+     * @param store is where the farmer buys fertilizers.
+     */
+    public void buyFertilizer(Store store){
+        store.sellFertilizer(this.money, this.inventory);
+    }
 //
 //    /**
 //     * Represents the farmer using fertilizer on a plant.
